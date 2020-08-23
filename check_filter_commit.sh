@@ -100,7 +100,11 @@ else
   git add -A
   git commit -m "automated update filtered with whitelist"
   echo "updated local repository"
-  echo "please update remote repo:   git push origin master"
+  if git push origin master --quiet 
+  then
+    echo "==============================================================="
+    echo "success: updated github repo"
+  fi
+
 fi
-echo "==============================================================="
 echo "==============================================================="

@@ -12,9 +12,9 @@
 #
 
 
-echo "==============================================================="
-echo "==============================================================="
-echo "Download der SemperVideo Blocklisten "
+echo "===================================================================="
+echo "===================================================================="
+echo "Download der SemperVideo Blocklisten (github.com/RPiList/specials"
 echo "   notserious      Streaming       Phishing-Angriffe"
 echo "   spam.mails      Win10Telemetry  easylist      samsung"
 echo "   pornblock1      pornblock2      pornblock3    pornblock4"
@@ -24,7 +24,7 @@ echo ""
 echo ""
 echo "Die Dateien werden im Verzeichnis blacklists abgelegt"
 echo "und die Domains der Datei whitelist werden herausgefiltert"
-echo "==============================================================="
+echo "===================================================================="
 
 echo "" 
 echo ""
@@ -102,9 +102,10 @@ else
   echo "updated local repository"
   if git push origin master --quiet 
   then
-    echo "==============================================================="
+    echo "===================================================================="
     echo "success: updated github repo"
   fi
 
 fi
-echo "==============================================================="
+echo "===================================================================="
+

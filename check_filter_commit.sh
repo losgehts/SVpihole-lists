@@ -1,20 +1,15 @@
 #!/bin/bash
 
 # Das Script holt die Dateien vom SV-Repo (github.com/RPiList) runter
-#  und löscht die Zeilen, die mit den Einträgen in der Datei 
-#  WHITELIST beginnen.
-#
-# Es sollte noch dahingehend erweitert werden, dass die gefilterten
-#   Listen auf ein eigenes Repo hochgeladen werden, damit sie dort
-#   meiner Familie zur Verfügung stehen.
-#
+#  und löscht die Zeilen, mit den Einträgen in der Datei 
+#  whitelist entsprechen.
 #
 #
 
 
 echo "===================================================================="
 echo "===================================================================="
-echo "Download der SemperVideo Blocklisten (github.com/RPiList/specials"
+echo "Download der SemperVideo Blocklisten (github.com/RPiList/specials):"
 echo "   notserious      Streaming       Phishing-Angriffe"
 echo "   spam.mails      Win10Telemetry  easylist      samsung"
 echo "   pornblock1      pornblock2      pornblock3    pornblock4"
@@ -28,7 +23,7 @@ echo "===================================================================="
 
 echo "" 
 echo ""
-echo " ** Download ** "
+echo " ** Download von RPiList** "
 # get lists from SV RPiList repo
 URL="https://raw.githubusercontent.com/RPiList/specials/master/Blocklisten"
 mkdir -p blacklists
@@ -49,7 +44,12 @@ wget -q "$URL"/child-protection -O blacklists/child-protection
 wget -q "$URL"/Fake-Science -O blacklists/Fake-Science
 wget -q "$URL"/Corona-Blocklist -O blacklists/Corona-Blocklist
 wget -q "$URL"/malware -O blacklists/malware
-echo "   Download fertig"
+echo "     Download fertig"
+
+echo ""
+echo " ** Download whitelist **"
+wget -q https://raw.githubusercontent.com/losgehts/SVpihole-lists/master/whitelist -O whitelist
+echo "     Download whtelist fertig"
 
 echo ""
 echo " ** Domains herausfiltern ** "
@@ -66,15 +66,15 @@ do
         echo ""         # empty line in whitelist
     else
 
-        # grep -v ^$domain blacklist > tmp
+        # grep -v ^$example.com$ blacklist > tmp
         for blacklist in blacklists/* ; do
-            grep -v ^$domain "$blacklist" > "$blacklist""_tmp"
+            grep -v ^$domain$ "$blacklist" > "$blacklist""_tmp"
             mv "$blacklist""_tmp" "$blacklist"
         done
 
     fi
 done < whitelist
-echo "   Filtern fertig"
+echo "     Filtern fertig"
 
 echo ""
 echo "** Check nach Änderungen **"

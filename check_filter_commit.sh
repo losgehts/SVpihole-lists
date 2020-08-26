@@ -68,7 +68,7 @@ do
 
         # grep -v ^$example.com$ blacklist > tmp
         for blacklist in blacklists/* ; do
-            grep -v ^$domain$ "$blacklist" > "$blacklist""_tmp"
+            grep -v "^${domain}$" "$blacklist" > "$blacklist""_tmp"
             mv "$blacklist""_tmp" "$blacklist"
         done
 

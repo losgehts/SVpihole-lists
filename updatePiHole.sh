@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# get this file:
+#   wget https://raw.githubusercontent.com/losgehts/SVpihole-lists/master/updatePiHole.sh
+
 # download filtered SV (RPiList) blacklists
 repo="https://raw.githubusercontent.com/losgehts/SVpihole-lists/master/blacklists/"
 curl -s -L "${repo}Corona-Blocklist" "${repo}Fake-Science" "${repo}Phishing-Angriffe" "${repo}Streaming " "${repo}Win10Telemetry" "${repo}child-protection" "${repo}crypto" "${repo}easylist" "${repo}gambling" "${repo}malware" "${repo}notserious" "${repo}samsung" "${repo}spam.mails" > filteredSVblacklist

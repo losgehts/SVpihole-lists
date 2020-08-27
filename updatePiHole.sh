@@ -5,7 +5,8 @@
 
 # download filtered SV (RPiList) blacklists
 repo="https://raw.githubusercontent.com/losgehts/SVpihole-lists/master/blacklists/"
-curl -s -L "${repo}Corona-Blocklist" "${repo}Fake-Science" "${repo}Phishing-Angriffe" "${repo}Streaming " "${repo}Win10Telemetry" "${repo}child-protection" "${repo}crypto" "${repo}easylist" "${repo}gambling" "${repo}malware" "${repo}notserious" "${repo}samsung" "${repo}spam.mails" > filteredSVblacklist
+# curl -s -L "${repo}Corona-Blocklist" "${repo}Fake-Science" "${repo}Phishing-Angriffe" "${repo}Streaming " "${repo}Win10Telemetry" "${repo}child-protection" "${repo}crypto" "${repo}easylist" "${repo}gambling" "${repo}malware" "${repo}notserious" "${repo}samsung" "${repo}spam.mails" > /var/www/html/filteredSVblacklist
+curl -s -L "${repo}Fake-Science" "${repo}Phishing-Angriffe" "${repo}Streaming " "${repo}Win10Telemetry" "${repo}crypto" "${repo}easylist" "${repo}gambling" "${repo}malware" "${repo}notserious" "${repo}spam.mails" > /var/www/html/filteredSVblacklist
 mv filteredSVblacklist /var/www/html/filteredSVblacklist
 
 # von Kuketz
@@ -22,6 +23,6 @@ sed 's/[\|^]//g' < adblock_tmp.sorted > /var/www/html/adblock.sorted
 # Remove files we no longer need
 rm adblock_tmp.unsorted adblock_tmp.sorted
 
-
 # update PiHole
 pihole -g
+

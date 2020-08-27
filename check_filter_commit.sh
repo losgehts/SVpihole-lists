@@ -23,6 +23,9 @@ echo "===================================================================="
 
 echo "" 
 echo ""
+
+cd ~/SVpihole-lists/
+
 echo " ** Download von RPiList** "
 # get lists from SV RPiList repo
 URL="https://raw.githubusercontent.com/RPiList/specials/master/Blocklisten"

@@ -7,7 +7,7 @@
 repo="https://raw.githubusercontent.com/losgehts/SVpihole-lists/master/blacklists/"
 # curl -s -L "${repo}Corona-Blocklist" "${repo}Fake-Science" "${repo}Phishing-Angriffe" "${repo}Streaming " "${repo}Win10Telemetry" "${repo}child-protection" "${repo}crypto" "${repo}easylist" "${repo}gambling" "${repo}malware" "${repo}notserious" "${repo}samsung" "${repo}spam.mails" > /var/www/html/filteredSVblacklist
 curl -s -L "${repo}Fake-Science" "${repo}Phishing-Angriffe" "${repo}Streaming " "${repo}Win10Telemetry" "${repo}crypto" "${repo}easylist" "${repo}gambling" "${repo}malware" "${repo}notserious" "${repo}spam.mails" > /var/www/html/filteredSVblacklist
-mv filteredSVblacklist /var/www/html/filteredSVblacklist
+# mv filteredSVblacklist /var/www/html/filteredSVblacklist
 
 # von Kuketz
 # Download AdBlock Lists (EasyList, EasyPrivacy, Fanboy Annoyance / Social Blocking)
